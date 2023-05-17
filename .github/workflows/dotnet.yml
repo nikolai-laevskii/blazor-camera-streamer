@@ -26,8 +26,11 @@ jobs:
           6.0.x
           7.0.x
 
+    - name: Check nuget sources
+      run: dotnet nuget list source
+
     - name: Restoring Nuget Packages for entire Solution
-      run: dotnet restore BlazorCameraStreamer.sln --verbosity diagnostic
+      run: dotnet restore BlazorCameraStreamer.sln --verbosity normal
 
     - name: Build Razor Component Library Project
       run: dotnet build .\BlazorCameraStreamer\BlazorCameraStreamer.csproj --no-restore --framework net7.0 --verbosity normal
