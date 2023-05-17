@@ -23,8 +23,8 @@ jobs:
       uses: ./setup-dotnet
       with:
         dotnet-version: |
-          7.0.x
           6.0.x
+          7.0.x
 
     - name: Restoring Nuget Packages for entire Solution
       run: dotnet restore BlazorCameraStreamer.sln --verbosity normal
