@@ -1,0 +1,3 @@
+[submodule "setup-dotnet"]
+	path = setup-dotnet
+	url = git@github.com:nikolai-laevskii/setup-dotnet.git
