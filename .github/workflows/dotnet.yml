@@ -15,13 +15,19 @@ jobs:
     steps:
     - name: Checking Out Code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        submodules: recursive
 
     - name: Installing .NET
-      uses: actions/setup-dotnet@v3
+      uses: ./setup-dotnet
       with:
         dotnet-version: |
           7.0.x
           6.0.x
+
+    # - name: Check nuget sources
+    #  run: dotnet nuget list source
 
     - name: Restoring Nuget Packages for entire Solution
       run: dotnet restore BlazorCameraStreamer.sln --verbosity normal
